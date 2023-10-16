@@ -9,7 +9,7 @@ data class User(
     val cell: String,
     val nat: String,
     val name: Name, // 1
-    val doB: DoB, // 2
+    val dob: DoB, // 2
     val registered: Registered,
     val id: Id,
     val picture: Picture, // 0
