@@ -5,19 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class UserRepository {
+class UserRepository @Inject constructor(val remoteDataSource: RemoteDataSource) {
     companion object{
         private const val TAG = "UserRepository"
     }
-
-    private val retrofit = Retrofit.Builder()
-        .baseUrl("https://randomuser.me/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-    private val remoteDataSource = retrofit.create(RemoteDataSource::class.java)
 
     fun getUsers(): MutableLiveData<List<User>> {
         val data = MutableLiveData<List<User>>()

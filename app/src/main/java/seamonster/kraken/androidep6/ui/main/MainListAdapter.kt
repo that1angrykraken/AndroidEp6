@@ -1,4 +1,4 @@
-package seamonster.kraken.androidep6.main
+package seamonster.kraken.androidep6.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
